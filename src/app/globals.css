@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== Industrial Theme - Don Fierro ===== */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply antialiased text-steel-800;
+    background-color: #fafaf9;
+  }
+
+  ::selection {
+    @apply bg-primary-400/30 text-steel-900;
+  }
+}
+
+@layer components {
+  /* Industrial scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-steel-100;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-steel-400 rounded-full;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary-500;
+  }
+
+  /* Hide scrollbar for category tabs */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Hex pattern bg utility */
+  .hex-bg {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5L52 17.5V42.5L30 55L8 42.5V17.5L30 5Z' fill='none' stroke='%23f59e0b' stroke-width='0.5' opacity='0.08'/%3E%3C/svg%3E");
+  }
+
+  /* Steel gradient text */
+  .text-gradient-steel {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-steel-700 to-steel-500;
+  }
+
+  /* Primary gradient text */
+  .text-gradient-primary {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-primary-500 to-accent-500;
+  }
+
+  /* Glass card */
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-lg;
+  }
+
+  /* Industrial border accent */
+  .border-industrial {
+    border-image: linear-gradient(to right, #f59e0b, #f97316, #f59e0b) 1;
+  }
+}
+
+@layer utilities {
+  /* Caution stripe pattern */
+  .caution-stripe {
+    background: repeating-linear-gradient(
+      -45deg,
+      #f59e0b,
+      #f59e0b 10px,
+      #1e293b 10px,
+      #1e293b 20px
+    );
+  }
+
+  /* Bolt pattern bg */
+  .bolt-pattern {
+    background-image: radial-gradient(circle, #f59e0b 1px, transparent 1px);
+    background-size: 30px 30px;
+  }
+}
+
+/* ===== Animations ===== */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gearRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes sparks {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
