@@ -42,19 +42,21 @@ export default function Hero() {
       {/* Animated gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-steel-950/80 via-transparent to-primary-900/20" />
 
-      {/* Static decorative tool emojis - no animations */}
-      {floatingTools.map((tool, i) => (
-        <div
-          key={i}
-          className="absolute text-4xl md:text-5xl opacity-5 pointer-events-none select-none"
-          style={{
-            left: `${10 + i * 11}%`,
-            top: `${15 + (i % 3) * 25}%`,
-          }}
-        >
-          {tool}
-        </div>
-      ))}
+      {/* Static decorative tool emojis - no animations, hidden on mobile */}
+      <div className="hidden md:block">
+        {floatingTools.map((tool, i) => (
+          <div
+            key={i}
+            className="absolute text-4xl md:text-5xl opacity-5 pointer-events-none select-none"
+            style={{
+              left: `${10 + i * 11}%`,
+              top: `${15 + (i % 3) * 25}%`,
+            }}
+          >
+            {tool}
+          </div>
+        ))}
+      </div>
 
       {/* Caution stripe accents */}
       <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-primary-500 via-accent-500 to-primary-500" />

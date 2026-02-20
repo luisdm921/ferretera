@@ -87,14 +87,11 @@ export default function WhyChooseUs() {
       <div className="absolute inset-0 hex-bg opacity-10" />
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary-500 to-transparent" />
 
-      {/* Floating decorative elements */}
-      <div className="absolute top-20 right-10 text-6xl opacity-5 animate-float">
+      {/* Decorative elements - hidden on mobile */}
+      <div className="hidden md:block absolute top-20 right-10 text-6xl opacity-5">
         ⚙️
       </div>
-      <div
-        className="absolute bottom-20 left-10 text-5xl opacity-5 animate-float"
-        style={{ animationDelay: "3s" }}
-      >
+      <div className="hidden md:block absolute bottom-20 left-10 text-5xl opacity-5">
         🔧
       </div>
 
